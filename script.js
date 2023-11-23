@@ -22,7 +22,7 @@ function ranGen() {
 // }
 
 //let humanPick = Math.floor(Math.random() * (4 - 1) + 1); // Random number between 1 and 3
-let humanPick = ranGen();
+//let humanPick = ranGen();
 // let computerPick = Math.floor(Math.random() * (4 - 1) + 1); // Random number between 1 and 3
 let computerPick = ranGen();
 // alert("The computer picks " + computerPick);
@@ -72,7 +72,15 @@ while (gameCount <= 5) {
       }
     }
   }
-  alert(
+  // alert(
+  //   gameWinExplanation +
+  //     "--Score Human " +
+  //     humanWinCount +
+  //     " Computer " +
+  //     computerWinCount
+  // );
+
+  console.log(
     gameWinExplanation +
       "--Score Human " +
       humanWinCount +
@@ -94,4 +102,6 @@ if (humanWinCount > computerWinCount) {
 } else {
   gameWinner = "Mr. Computer";
 }
-alert(gameWinner + " is the winner of this match");
+//alert(gameWinner + " is the winner of this match");
+
+console.log(gameWinner + " is the winner of this match");
