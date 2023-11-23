@@ -9,8 +9,22 @@ let gameWinExplanation;
 // let humanPick = 3;
 // let computerPick = 2;
 
-let humanPick = Math.floor(Math.random() * (4 - 1) + 1); // Random number between 1 and 3
-let computerPick = Math.floor(Math.random() * (4 - 1) + 1); // Random number between 1 and 3
+function ranGen() {
+  return Math.floor(Math.random() * (4 - 1) + 1);
+}
+
+// function getComputerChoice() {
+//   return Math.floor(Math.random() * (4 - 1) + 1);
+// }
+
+// function getHumanChoice() {
+//   return Math.floor(Math.random() * (4 - 1) + 1);
+// }
+
+//let humanPick = Math.floor(Math.random() * (4 - 1) + 1); // Random number between 1 and 3
+let humanPick = ranGen();
+// let computerPick = Math.floor(Math.random() * (4 - 1) + 1); // Random number between 1 and 3
+let computerPick = ranGen();
 // alert("The computer picks " + computerPick);
 // alert("The human's pick is " + humanPick);
 let gameCount = 1;
@@ -58,7 +72,6 @@ while (gameCount <= 5) {
       }
     }
   }
-
   alert(
     gameWinExplanation +
       "--Score Human " +
@@ -66,9 +79,19 @@ while (gameCount <= 5) {
       " Computer " +
       computerWinCount
   );
-  humanPick = Math.floor(Math.random() * (4 - 1) + 1); // Random number between 1 and 3
-  computerPick = Math.floor(Math.random() * (4 - 1) + 1); // Random number between 1 and 3
+
   if (humanPick != computerPick) {
     gameCount++;
   }
+  if (gameCount != 6) {
+    humanPick = ranGen(); // Random number between 1 and 3
+    computerPick = ranGen(); // Random number between 1 and 3
+  }
 }
+
+if (humanWinCount > computerWinCount) {
+  gameWinner = "Mr. Human";
+} else {
+  gameWinner = "Mr. Computer";
+}
+alert(gameWinner + " is the winner of this match");
